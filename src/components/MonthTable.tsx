@@ -1,5 +1,5 @@
 import React from 'react';
-import { format, getDaysInMonth, startOfMonth, isWeekend, getYear, getMonth } from 'date-fns';
+import { format, getDaysInMonth, startOfMonth, isWeekend, getYear, getMonth, getDay } from 'date-fns';
 import { it } from 'date-fns/locale';
 import { Pencil, Trash2 } from 'lucide-react';
 import { Person, LeaveRecord, LeaveType, LEAVE_COLORS, LEAVE_DOTS, LEAVE_INITIALS } from '@/types';
