@@ -18,7 +18,7 @@ export function CalendarioApp() {
   const [loginPassword, setLoginPassword] = useState('');
   const [loginError, setLoginError] = useState(false);
 
-  const [currentDate, setCurrentDate] = useState(new Date(2026, 5, 1)); // Default to June 2026 to match design
+  const [currentDate, setCurrentDate] = useState(() => new Date()); // Apre il calendario sul mese corrente
 
   const [activeLeaveType, setActiveLeaveType] = useState<LeaveType | null>('ferie');
   const [newPersonName, setNewPersonName] = useState('');
