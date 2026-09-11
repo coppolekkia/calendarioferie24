@@ -119,10 +119,8 @@ export function CalendarioApp() {
 
   const handleAddPerson = (e: React.FormEvent) => {
     e.preventDefault();
-    if (newPersonName.trim()) {
-      addPerson(newPersonName, currentMonthStr);
-      setNewPersonName('');
-    }
+    addPerson(newPersonName, currentMonthStr);
+    setNewPersonName('');
   };
 
   const handleDayClick = (personId: string, dateStr: string) => {
