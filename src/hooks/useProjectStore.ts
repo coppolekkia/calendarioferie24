@@ -21,14 +21,14 @@ export function useProjectStore() {
       snapshot.forEach((docSnap) => {
         newProjects.push({
           id: docSnap.id,
-          name: docSnap.data().name || 'Progetto Senza Nome',
+          name: docSnap.data()['name'] || 'Progetto Senza Nome',
         });
       });
       setProjects(newProjects);
       
       if (newProjects.length > 0 && !currentProjectId) {
-        setCurrentProjectId(newProjects[0].id);
-        localStorage.setItem('currentProjectId', newProjects[0].id);
+        setCurrentProjectId(newProjects[0]!.id);
+        localStorage.setItem('currentProjectId', newProjects[0]!.id);
       } else if (newProjects.length === 0) {
         // Auto-create a default project if none exist
         addProject('Progetto Default');
@@ -74,7 +74,7 @@ export function useProjectStore() {
       if (currentProjectId === id) {
         const remaining = projects.filter(p => p.id !== id);
         if (remaining.length > 0) {
-          switchProject(remaining[0].id);
+          switchProject(remaining[0]!.id);
         } else {
           setCurrentProjectId(null);
           localStorage.removeItem('currentProjectId');

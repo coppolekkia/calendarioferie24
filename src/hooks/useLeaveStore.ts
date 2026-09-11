@@ -32,11 +32,11 @@ export function useLeaveStore(projectId: string | null) {
         const data = docSnap.data();
         newPeople.push({
           id: docSnap.id,
-          name: data.name,
-          colorClass: data.colorClass,
-          monthStr: data.monthStr,
+          name: data['name'],
+          colorClass: data['colorClass'],
+          monthStr: data['monthStr'],
         });
-        newLeaves[docSnap.id] = data.leaves || {};
+        newLeaves[docSnap.id] = data['leaves'] || {};
       });
       
       setPeople(newPeople);
@@ -56,7 +56,7 @@ export function useLeaveStore(projectId: string | null) {
     const newId = Math.random().toString(36).substring(2, 9);
     const newPerson = {
       name: finalName,
-      colorClass: AVATAR_COLORS[people.length % AVATAR_COLORS.length],
+      colorClass: AVATAR_COLORS[people.length % AVATAR_COLORS.length]!,
       leaves: {},
       monthStr
     };
