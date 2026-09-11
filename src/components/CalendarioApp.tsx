@@ -408,8 +408,7 @@ export function CalendarioApp() {
             />
             <button 
               type="submit"
-              disabled={!newPersonName.trim()}
-              className="bg-[#5B60F6] hover:bg-[#4A4FD1] disabled:opacity-50 text-white px-5 py-2.5 rounded-full text-sm font-semibold flex items-center gap-2 transition-colors shadow-sm whitespace-nowrap"
+              className="bg-[#5B60F6] hover:bg-[#4A4FD1] text-white px-5 py-2.5 rounded-full text-sm font-semibold flex items-center gap-2 transition-colors shadow-sm whitespace-nowrap"
             >
               <UserPlus size={16} />
               Aggiungi
