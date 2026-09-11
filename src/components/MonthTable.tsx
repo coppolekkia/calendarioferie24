@@ -66,7 +66,7 @@ export function MonthTable({
               {days.map(d => (
                 <th key={d.toISOString()} className={cn(
                   "p-2 text-center border-b border-r border-slate-100 min-w-[40px]",
-                  isWeekend(d) ? "bg-[#f4f6f8]" : "bg-white"
+                  getDay(d) === 6 ? "bg-sky-100" : getDay(d) === 0 ? "bg-red-100" : "bg-white"
                 )}>
                   <div className="flex flex-col items-center gap-1">
                     <span className="font-bold text-slate-700">{format(d, 'd')}</span>
@@ -157,7 +157,7 @@ export function MonthTable({
                         onClick={() => !isPrintVersion && onDayClick?.(person.id, dateStr)}
                         className={cn(
                           "p-1 border-b border-r border-slate-100 text-center relative",
-                          isWE && !leaveType ? "bg-[#f4f6f8]" : "bg-white",
+                          isWE ? (getDay(d) === 6 ? "bg-sky-100" : "bg-red-100") : "bg-white",
                           !isPrintVersion && !leaveType ? "cursor-pointer hover:bg-slate-50 transition-colors" : ""
                         )}
                       >
