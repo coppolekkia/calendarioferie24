@@ -10,6 +10,7 @@ export interface Project {
 export function useProjectStore() {
   const [projects, setProjects] = useState<Project[]>([]);
   const [currentProjectId, setCurrentProjectId] = useState<string | null>(() => {
+    if (typeof window === 'undefined') return null;
     return localStorage.getItem('currentProjectId') || null;
   });
   const [loading, setLoading] = useState(true);

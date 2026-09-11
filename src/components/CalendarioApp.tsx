@@ -12,7 +12,7 @@ import { MonthTable } from '@/components/MonthTable';
 
 export function CalendarioApp() {
   const [isAuthenticated, setIsAuthenticated] = useState(
-    sessionStorage.getItem('isAuthenticated') === 'true'
+    () => typeof window !== 'undefined' && sessionStorage.getItem('isAuthenticated') === 'true'
   );
   const [loginUsername, setLoginUsername] = useState('');
   const [loginPassword, setLoginPassword] = useState('');
